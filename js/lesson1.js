@@ -113,6 +113,7 @@ console.log(1 === true): ${1 === true} </br>
 console.log('0' == false): ${'0' == false} </br>
 console.log('0' === false): ${'0' === false} </br>
 console.log('Papaya' < 'papaya'): ${'Papaya' < 'papaya'} </br>
+console.log('Papaya' === 'papaya'): ${'Papaya' === 'papaya'} </br>
 console.log(undefined == null): ${undefined == null} </br>
 console.log(undefined === null): ${undefined === null} </br>
 `
