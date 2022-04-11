@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/mail.css">
+  <link rel="stylesheet" href="../css/RoShamBo.css">
+  <link rel="shortcut icon" href="../images/kisspng-rockpaperscissors-game-money-5b357af4776f29.9395406515302315404893.png" />
+  <title>Камінь-ножиці-папір</title>
+</head>
+<body>
+  <a href="../index.html" class="goBack">
+    Повернутись на головну
+  </a>
+  <div id="RoShamBo">
+    <div class="boxGame">
+      <div class="player">
+        <p class="name">
+          Player
+        </p>
+        <div class="playerChoise">
+          <span class="plIco plIco__rock show" data-game="rock"></span>
+          <span class="plIco plIco__scissors" data-game="scissors"></span>
+          <span class="plIco plIco__paper" data-game="paper"></span>
+        </div>
+      </div>
+      <div class="vs">
+        <span class="vs-ico">
+        </span>
+      </div>
+      <div class="ai">
+        <p class="name">
+          AI
+        </p>
+        <div class="aiChoise">
+          <span class="aiIco aiIco__rock show" data-game="rock"></span>
+          <span class="aiIco aiIco__scissors" data-game="scissors"></span>
+          <span class="aiIco aiIco__paper" data-game="paper"></span>
+        </div>
+      </div>
+    </div>
+    <div class="result">
+      <p class="textResult"></p>
+    </div>
+    <div class="boxNav">
+      <button class="start">
+        Розпочати гру
+      </button>
+      <div class="choiceBtns">
+        <button class="choiceBtn" data-game="rock">
+          Камінь
+        </button>
+        <button class="choiceBtn" data-game="scissors">
+          Ножиці
+        </button>
+        <button class="choiceBtn" data-game="paper">
+          Папір
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="../js/RoShamBo.js"></script>
+</body>
+</html>
