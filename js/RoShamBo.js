@@ -4,6 +4,11 @@ let aiChoiseIco = document.querySelectorAll('.aiIco')
 let playerBtnNav = document.querySelector('.choiceBtns')
 
 let startBtn = document.querySelector('.start')
+let complexityBox = document.querySelector('.complexity')
+let complexityBtn = document.querySelectorAll('.complexityBtn')
+
+let complexity
+
 let allChoiceBtn = document.querySelectorAll('.choiceBtn')
 
 let speed = 10
@@ -12,7 +17,17 @@ let plIntervalShow
 
 startBtn.addEventListener('click', e => {
   e.preventDefault()
-  startGame()
+  startBtn.classList.remove('seen')
+  complexityBox.classList.add('seen')
+})
+
+complexityBtn.forEach(b => {
+  b.addEventListener('click', e => {
+    e.preventDefault()
+    complexity = e.target.dataset.complexity
+    startGame()
+  })
+
 })
 
 allChoiceBtn.forEach(b => {
@@ -58,7 +73,92 @@ const stopGame = (choice) => {
   clearInterval(plIntervalShow)
   startBtn.classList.add('seen')
   playerBtnNav.classList.remove('seen')
+  if (complexity === 'difficult') {
+    let aiShanse = Math.floor(Math.random() * 1000)
+    playerChoiseIco.forEach(b => {
+      b.dataset.game === choice ? b.classList.add('show') : b.classList.remove('show')
+    })
+    if (aiShanse > 990) {
+      setWin(choice)
+    } else {
+      if (choice === 'rock') {
+        aiChoiseIco.forEach(a => {
+          a.classList.remove('show')
+          if (a.dataset.game == 'paper') {
+            a.classList.add('show')
+            document.querySelector('.result').innerHTML = `
+              <p class="textResult">Комп'ютер виграв</p>
+            `
+          } 
+        })
+      } else if (choice === 'scissors') {
+        aiChoiseIco.forEach(a => {
+          a.classList.remove('show')
+          if (a.dataset.game == 'rock') {
+            a.classList.add('show')
+            document.querySelector('.result').innerHTML = `
+              <p class="textResult">Комп'ютер виграв</p>
+            `
+          } 
+        })
+      } else {
+        aiChoiseIco.forEach(a => {
+          a.classList.remove('show')
+          if (a.dataset.game == 'scissors') {
+            a.classList.add('show')
+            document.querySelector('.result').innerHTML = `
+              <p class="textResult">Комп'ютер виграв</p>
+            `
+          } 
+        })
+      }
+    }
+  } else if (complexity === 'easy') {
+    let aiShanse = Math.floor(Math.random() * 1000)
+    playerChoiseIco.forEach(b => {
+      b.dataset.game === choice ? b.classList.add('show') : b.classList.remove('show')
+    })
+    if (aiShanse > 998) {
+      setWin(choice)
+    } else {
+      if (choice === 'rock') {
+        aiChoiseIco.forEach(a => {
+          a.classList.remove('show')
+          if (a.dataset.game == 'scissors') {
+            a.classList.add('show')
+            document.querySelector('.result').innerHTML = `
+              <p class="textResult">Гравець виграв</p>
+            `
+          } 
+        })
+      } else if (choice === 'scissors') {
+        aiChoiseIco.forEach(a => {
+          a.classList.remove('show')
+          if (a.dataset.game == 'paper') {
+            a.classList.add('show')
+            document.querySelector('.result').innerHTML = `
+              <p class="textResult">Гравець виграв</p>
+            `
+          } 
+        })
+      } else {
+        aiChoiseIco.forEach(a => {
+          a.classList.remove('show')
+          if (a.dataset.game == 'rock') {
+            a.classList.add('show')
+            document.querySelector('.result').innerHTML = `
+              <p class="textResult">Гравець виграв</p>
+            `
+          } 
+        })
+      }
+    }
+  } else {
+    setWin(choice)
+  }
+}
 
+const setWin = (choice) => {
   let aiChoice
   aiChoiseIco.forEach(a => {
     if (a.classList.contains('show')) {
@@ -93,7 +193,7 @@ const stopGame = (choice) => {
 }
 
 const startGame = () => {
-  startBtn.classList.remove('seen')
+  complexityBox.classList.remove('seen')
   playerBtnNav.classList.add('seen')
   document.querySelector('.result').innerHTML = `<p class="textResult"></p>`
   plIntervalShow = setInterval(async () => {

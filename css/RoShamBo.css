@@ -128,12 +128,35 @@
   font-weight: 600;
 }
 
+.complexity {
+  display: none;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.complexity.seen {
+  display: flex;
+}
+
+.complexityBtn {
+  border: none;
+  background-color: unset;
+  color: #000;
+  padding: 15px;
+  border-radius: 5px;
+  transition: .3s;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .start {
   display: none;
 }
 
 .choiceBtn:hover,
-.start:hover {
+.start:hover,
+.complexityBtn:hover {
   box-shadow: 5px 5px 5px rgba(0,0,0, .1);
 }
 
