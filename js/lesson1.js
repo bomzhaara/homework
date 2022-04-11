@@ -103,6 +103,7 @@ document.getElementById('ex5_result').innerHTML = `${companyName} has ${repairBo
 document.getElementById('ex6_result').innerHTML = `
 console.log(5 > 4): ${5 > 4} </br>
 console.log(10 >= '7'): ${10 >= '7'} </br>
+console.log('2' > '12'): ${'2' > '12'} </br>
 console.log('2' < '12'): ${'2' < '12'} </br>
 console.log('4' == 4): ${'4' == 4} </br>
 console.log('6' === 6): ${'6' === 6} </br>
