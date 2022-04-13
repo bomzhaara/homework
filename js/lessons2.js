@@ -52,7 +52,7 @@ ex3Btns.addEventListener('click', e => {
 // Напишіть код що буде виводити в консоль браузера рядок в залежності від значення змінної "hours"
 
 // Якщо занчення зміної `hours`:
-let res4 = date.getHours() < 17 ? `Pending` : date.getHours() >= 17 ? `Expires` : date.getHours() > 24 ? `Overdue` : ''
+let res4 = date.getHours() < 17 ? `Pending` : date.getHours() >= 17 && date.getHours() <= 24 ? `Expires` : date.getHours() > 24 ? `Overdue` : ''
 document.querySelector('.resultEx4').innerHTML = `Взята для прикладу поточна година ${date.getHours()} : ${res4}`
 
 // - меньше `17`, виводимо рядок `"Pending"`
