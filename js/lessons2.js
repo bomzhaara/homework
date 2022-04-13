@@ -99,16 +99,12 @@ ex5.forEach(e => {
 let ex6 = [5, 4, 3, 2, 1, 0]
 
 let getDeadLine2 = e => {
-  switch (e) {
-    case 5:
+  switch (true) {
+    case (e >= 3):
       return `Вхідне значення ${e} </br> Ще не скоро ) </br>`
-    case 4:
-      return `Вхідне значення ${e} </br> Ще не скоро ) </br>`
-    case 3:
-      return `Вхідне значення ${e} </br> Ще не скоро ) </br>`
-    case 2:
+    case (e === 2):
       return `Вхідне значення ${e} </br> Післязавтра </br>`
-    case 1:
+    case (e === 1):
       return `Вхідне значення ${e} </br> Завтра </br>`
     default:
       return `Вхідне значення ${e} </br> Сьогодні </br>`
